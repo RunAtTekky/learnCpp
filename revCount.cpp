@@ -8,6 +8,7 @@ void revCnt(int n) {
 }
 
 int main() {
+	cout << "Enter n: \n";
 	int n; cin >> n;
 	cout << "\nCounting\n";
 	revCnt(n);
