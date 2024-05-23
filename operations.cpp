@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#define print(a,b) cout << a << " " << b << "\n"
+
 class Operation {
 private:
         int a, b, add, mul;
@@ -36,7 +38,12 @@ int main() {
         Operation o;
 
         o.get();
-        o.sum();
-        o.product();
-        o.division();
+        int sum = o.sum();
+        int prod = o.product();
+        float div = o.division();
+
+        print("Sum:",sum);
+        print("Product:",prod);
+        print("Division:",div);
+
 }
