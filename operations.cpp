@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 #define print(a,b) cout << a << " " << b << "\n"
@@ -30,7 +31,14 @@ inline int Operation::product() {
 }
 
 inline float Operation::division() {
-        return (float)a/b;
+        try {
+                if (b == 0) throw "Dividing by Zero";
+                return (float)a/b;
+        }
+        catch (...) {
+                cout << "b is 0, thus cannot divide" << "\n";
+        }
+        return numeric_limits<float>::infinity();
 }
 
 
@@ -38,12 +46,14 @@ int main() {
         Operation o;
 
         o.get();
-        int sum = o.sum();
-        int prod = o.product();
-        float div = o.division();
 
+        int sum = o.sum();
         print("Sum:",sum);
+
+        int prod = o.product();
         print("Product:",prod);
+
+        float div = o.division();
         print("Division:",div);
 
 }
