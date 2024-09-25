@@ -12,4 +12,6 @@ int main() {
         int n; cin >> n;
         cout << "\n";
         count(n);
+
+        cout << "This is super fun\n";
 }
